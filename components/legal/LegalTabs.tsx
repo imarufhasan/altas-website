@@ -73,7 +73,7 @@ export default function LegalTabs({ documents }: LegalTabsProps) {
                   key={doc.id}
                   type="button"
                   onClick={() => handleSelect(doc.id)}
-                  className={`shrink-0 whitespace-nowrap border-b-2 px-4 py-2 text-[12.5px] font-semibold uppercase tracking-[0.1em] transition-colors ${
+                  className={`shrink-0 whitespace-nowrap border-b-2 px-4 py-2 text-[12.5px] font-semibold uppercase tracking-widest transition-colors ${
                     isActive
                       ? "border-gold text-gold"
                       : "border-transparent text-muted hover:text-cream"
