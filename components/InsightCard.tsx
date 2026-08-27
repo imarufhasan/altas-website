@@ -45,14 +45,14 @@ export default function InsightCard({
         "
       >
         {/* Image */}
-        <div className="relative aspect-[16/10] overflow-hidden bg-bg">
+        <div className="relative aspect-16/10 overflow-hidden bg-bg">
           {/* Skeleton */}
           <div
             aria-hidden="true"
             className="
               absolute inset-0
               animate-pulse
-              bg-white/[0.05]
+              bg-white/5
             "
           />
 
@@ -106,7 +106,7 @@ export default function InsightCard({
                 text-[10px]
                 font-semibold
                 uppercase
-                tracking-[0.1em]
+                tracking-widest
                 text-gold
                 transition-transform
                 duration-200

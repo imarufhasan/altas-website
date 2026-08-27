@@ -165,13 +165,9 @@ const INSIGHTS_DATA: InsightItem[] = [
   },
 ];
 
-// ---------------------------------------------------------------------------
-// "API" functions — components call these, not the arrays above
-// ---------------------------------------------------------------------------
-
 export const getFramework = () => mockFetch(FRAMEWORK_DATA);
 export const getPillars = () => mockFetch(PILLARS_DATA);
 export const getDomains = () => mockFetch(DOMAINS_DATA);
 export const getDriftIndicators = () => mockFetch(DRIFT_INDICATORS_DATA);
 export const getPathSteps = () => mockFetch(PATH_STEPS_DATA);
-export const getInsights = () => mockFetch(INSIGHTS_DATA.slice(1, 4)); // featured 3, mirrors INSIGHTS.slice(1,4)
+export const getInsights = () => mockFetch(INSIGHTS_DATA.slice(1, 4)); 

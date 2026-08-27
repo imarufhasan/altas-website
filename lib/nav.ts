@@ -9,6 +9,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "How LMCS Works", href: "/how-lmcs-works" },
   { label: "Project Assessment", href: "/project-assessment" },
+  { label: "ATLAS", href: "/atlas" },
   { label: "Project Drift", href: "/project-drift" },
   { label: "Delivery Confidence", href: "/delivery-confidence" },
   { label: "Insights", href: "/insights" },

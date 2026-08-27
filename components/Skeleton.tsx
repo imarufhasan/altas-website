@@ -5,7 +5,7 @@
 export default function Skeleton({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`animate-pulse rounded-sm bg-white/[0.06] ${className}`}
+      className={`animate-pulse rounded-sm bg-white/6 ${className}`}
       aria-hidden="true"
     />
   );

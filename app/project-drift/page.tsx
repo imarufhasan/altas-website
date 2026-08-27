@@ -1,9 +1,9 @@
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
-import DomainCard from "@/components/DomainCard";
 import CTASection from "@/components/CTASection";
 import ProjectDriftInteractive from "./ProjectDriftInteractive";
 import Icon, { type IconName } from "@/components/Icon";
+import Reveal from "@/components/Reveal";
 
 const REVEALS: {
   title: string;
@@ -141,29 +141,31 @@ export default function ProjectDriftPage() {
         heading="See Drift Before It Becomes the Operating Model."
         description="Project Drift identifies indicators that the actual condition of a project is moving away from expected progress, readiness, accountability, or delivery requirements."
         buttonLabel="Discuss Project Drift"
+        image="/images/heroes/project_drift.png"
       />
 
       {/* What drift reveals */}
       <section className="border-b border-border bg-bg py-20 sm:py-24">
         <Container>
-          <div className="max-w-2xl">
-            <h2 className="font-serif text-3xl text-cream md:text-4xl">
-              What Project Drift Reveals
-            </h2>
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2 className="font-serif text-3xl text-cream md:text-4xl">
+                What Project Drift Reveals
+              </h2>
 
-            <p className="mt-4 text-[16px] leading-relaxed text-muted">
-              Drift is rarely a sudden failure; it is a gradual erosion of
-              control. We identify the subtle, systemic shifts where the
-              reported condition diverges from reality.
-            </p>
-          </div>
+              <p className="mt-4 text-[16px] leading-relaxed text-muted">
+                Drift is rarely a sudden failure; it is a gradual erosion of
+                control. We identify the subtle, systemic shifts where the
+                reported condition diverges from reality.
+              </p>
+            </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:mt-14 sm:grid-cols-2 md:grid-cols-3">
-            {REVEALS.map((item) => (
-              <div
-                key={item.title}
-                tabIndex={0}
-                className="
+            <div className="mt-12 grid grid-cols-1 gap-5 sm:mt-14 sm:grid-cols-2 md:grid-cols-3">
+              {REVEALS.map((item) => (
+                <div
+                  key={item.title}
+                  tabIndex={0}
+                  className="
             group relative cursor-pointer overflow-hidden
             rounded-sm border border-border bg-card
             p-6 sm:p-7
@@ -183,33 +185,33 @@ export default function ProjectDriftPage() {
             active:translate-y-0
             active:bg-[#24271f]
           "
-              >
-                {/* Inner border */}
-                <div
-                  className="
+                >
+                  {/* Inner border */}
+                  <div
+                    className="
               pointer-events-none absolute inset-1
               rounded-sm border border-transparent
               transition-colors duration-300
               group-hover:border-[#34362f]
               group-focus-visible:border-[#34362f]
             "
-                />
+                  />
 
-                {/* Top accent */}
-                <div
-                  className="
+                  {/* Top accent */}
+                  <div
+                    className="
               absolute left-0 top-0 h-px w-0
               bg-gold
               transition-all duration-500
               group-hover:w-full
               group-focus-visible:w-full
             "
-                />
+                  />
 
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div
-                    className="
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div
+                      className="
                 flex h-11 w-11 items-center justify-center
                 rounded-sm border border-border
                 bg-bg-alt text-gold
@@ -222,49 +224,49 @@ export default function ProjectDriftPage() {
                 group-focus-visible:border-gold
                 group-focus-visible:bg-[#25271f]
               "
-                  >
-                    <Icon
-                      name={item.icon}
-                      className="
+                    >
+                      <Icon
+                        name={item.icon}
+                        className="
                   h-5 w-5
                   transition-transform duration-300
                   group-hover:scale-110
                   group-focus-visible:scale-110
                 "
-                      strokeWidth={1.7}
-                    />
-                  </div>
+                        strokeWidth={1.7}
+                      />
+                    </div>
 
-                  {/* Title */}
-                  <h3
-                    className="
+                    {/* Title */}
+                    <h3
+                      className="
                 mt-6 font-serif text-xl text-cream
                 transition-colors duration-300
                 group-hover:text-gold
                 group-focus-visible:text-gold
               "
-                  >
-                    {item.title}
-                  </h3>
+                    >
+                      {item.title}
+                    </h3>
 
-                  {/* Divider */}
-                  <div
-                    className="
+                    {/* Divider */}
+                    <div
+                      className="
                 mt-4 h-px w-8 bg-gold/60
                 transition-all duration-300
                 group-hover:w-14
                 group-focus-visible:w-14
               "
-                  />
+                    />
 
-                  {/* Description */}
-                  <p className="mt-4 text-[15px] leading-relaxed text-muted">
-                    {item.desc}
-                  </p>
+                    {/* Description */}
+                    <p className="mt-4 text-[15px] leading-relaxed text-muted">
+                      {item.desc}
+                    </p>
 
-                  {/* Interactive indicator */}
-                  <div
-                    className="
+                    {/* Interactive indicator */}
+                    <div
+                      className="
                 mt-6 flex items-center gap-2
                 text-[10px] font-semibold uppercase
                 tracking-[0.14em] text-muted
@@ -278,18 +280,18 @@ export default function ProjectDriftPage() {
                 group-focus-visible:translate-x-1
                 group-focus-visible:opacity-100
               "
-                  >
-                    <span>Examine Indicator</span>
-                    <span className="text-gold">→</span>
+                    >
+                      <span>Examine Indicator</span>
+                      <span className="text-gold">→</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </Container>
       </section>
 
-      {/* Reported vs Evidence */}
       <section
         className="
     border-b
@@ -301,10 +303,10 @@ export default function ProjectDriftPage() {
   "
       >
         <Container>
-          {/* Full-width heading */}
-          <div className="text-center">
-            <h2
-              className="
+          <Reveal>
+            <div className="text-center">
+              <h2
+                className="
           font-serif
           text-3xl
           leading-[1.15]
@@ -312,95 +314,97 @@ export default function ProjectDriftPage() {
           md:text-4xl
           lg:text-[42px]
         "
-            >
-              Reported Progress vs Evidence-Supported Condition
-            </h2>
+              >
+                Reported Progress vs Evidence-Supported Condition
+              </h2>
 
-            <div className="mx-auto mt-5 h-px w-12 bg-gold/60" />
-          </div>
+              <div className="mx-auto mt-5 h-px w-12 bg-gold/60" />
+            </div>
 
-          {/* Full-width comparison card */}
-          <ProjectDriftInteractive
-            reported={REPORTED}
-            evidence={EVIDENCE_SIDE}
-          />
+            <ProjectDriftInteractive
+              reported={REPORTED}
+              evidence={EVIDENCE_SIDE}
+            />
+          </Reveal>
         </Container>
       </section>
 
-      {/* Indicators */}
       <section className="border-b border-border bg-bg py-20 sm:py-24">
         <Container>
-          <div className="max-w-3xl">
-            <h2 className="font-serif text-3xl leading-tight text-cream md:text-4xl">
-              Indicators Across the Project Condition
-            </h2>
-          </div>
+          <Reveal>
+            <div className="max-w-3xl">
+              <h2 className="font-serif text-3xl leading-tight text-cream md:text-4xl">
+                Indicators Across the Project Condition
+              </h2>
+            </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-x-12 sm:mt-14 md:grid-cols-2">
-            {INDICATORS.map((item, index) => (
-              <article
-                key={item.title}
-                className={`
+            <div className="mt-12 grid grid-cols-1 gap-x-12 sm:mt-14 md:grid-cols-2">
+              {INDICATORS.map((item, index) => (
+                <article
+                  key={item.title}
+                  className={`
             group relative py-7
             ${index < 4 ? "border-b border-border" : ""}
             ${index === 4 ? "md:border-b-0" : ""}
             ${index === 5 ? "md:border-b-0" : ""}
             md:py-8
           `}
-              >
-                <div className="flex items-start gap-4">
-                  {/* Icon */}
-                  <div
-                    className="
+                >
+                  <div className="flex items-start gap-4">
+                    {/* Icon */}
+                    <div
+                      className="
                 mt-0.5 flex h-8 w-8 shrink-0
                 items-center justify-center
                 text-gold
                 transition-transform duration-300 ease-out
-                group-hover:translate-y-[-1px]
+                group-hover:-translate-y-px
               "
-                  >
-                    <Icon
-                      name={item.icon}
-                      className="h-[17px] w-[17px]"
-                      strokeWidth={1.5}
-                    />
-                  </div>
+                    >
+                      <Icon
+                        name={item.icon}
+                        className="h-4.25 w-4.25"
+                        strokeWidth={1.5}
+                      />
+                    </div>
 
-                  {/* Content */}
-                  <div className="min-w-0">
-                    <h3
-                      className="
+                    {/* Content */}
+                    <div className="min-w-0">
+                      <h3
+                        className="
                   font-serif text-xl text-cream
                   transition-colors duration-300
                   group-hover:text-gold
                 "
-                    >
-                      {item.title}
-                    </h3>
+                      >
+                        {item.title}
+                      </h3>
 
-                    <p
-                      className="
+                      <p
+                        className="
                   mt-3 max-w-xl
                   text-[14px] leading-[1.75]
                   text-muted
                 "
-                    >
-                      {item.desc}
-                    </p>
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
-          </div>
+                </article>
+              ))}
+            </div>
+          </Reveal>
         </Container>
       </section>
 
       {/* Early detection */}
       <section className="border-b border-border bg-bg-alt py-20 sm:py-24">
         <Container className="max-w-3xl">
-          <div
-            tabIndex={0}
-            className="
+          <Reveal>
+            <div
+              tabIndex={0}
+              className="
               cursor-default rounded-sm p-2
               outline-none
               transition-all duration-300
@@ -409,35 +413,38 @@ export default function ProjectDriftPage() {
               focus-visible:ring-gold/30
               sm:p-4
             "
-          >
-            <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-gold">
-              The Value of Early Detection
-            </p>
+            >
+              <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-gold">
+                The Value of Early Detection
+              </p>
 
-            <h2 className="mt-3 font-serif text-3xl text-cream md:text-4xl">
-              Identify Drift Early.
-            </h2>
+              <h2 className="mt-3 font-serif text-3xl text-cream md:text-4xl">
+                Identify Drift Early.
+              </h2>
 
-            <p className="mt-5 text-[16px] leading-relaxed text-muted">
-              Projects do not fail overnight; they drift into failure.
-              Identifying deterioration earlier can provide leadership with
-              better visibility before recovery becomes the operating model.
-            </p>
+              <p className="mt-5 text-[16px] leading-relaxed text-muted">
+                Projects do not fail overnight; they drift into failure.
+                Identifying deterioration earlier can provide leadership with
+                better visibility before recovery becomes the operating model.
+              </p>
 
-            <p className="mt-4 text-[16px] leading-relaxed text-muted">
-              Our assessments zero in on the structural integrity of the project
-              condition, stripping away optimism to reveal the raw,
-              evidence-supported reality. This clarity is a prerequisite for
-              authoritative intervention.
-            </p>
-          </div>
+              <p className="mt-4 text-[16px] leading-relaxed text-muted">
+                Our assessments zero in on the structural integrity of the
+                project condition, stripping away optimism to reveal the raw,
+                evidence-supported reality. This clarity is a prerequisite for
+                authoritative intervention.
+              </p>
+            </div>
+          </Reveal>
         </Container>
       </section>
 
-      <CTASection
-        title="Understand Where the Project Is Drifting."
-        description="Identifying deterioration earlier can provide leadership with better visibility before recovery becomes the operating model."
-      />
+      <Reveal>
+        <CTASection
+          title="Understand Where the Project Is Drifting."
+          description="Identifying deterioration earlier can provide leadership with better visibility before recovery becomes the operating model."
+        />
+      </Reveal>
     </>
   );
 }

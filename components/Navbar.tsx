@@ -42,7 +42,7 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href={CONTACT_HREF} variant="primary" className="px-6 py-3">
+          <Button href={CONTACT_HREF} variant="primary" className="px-6">
             Contact Us
           </Button>
         </div>

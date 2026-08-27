@@ -34,7 +34,7 @@ export default function DomainsSection({ domains }: Props) {
                 key={domain.title}
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className={`group relative min-h-[170px] border-t p-0 py-6 text-left transition-all duration-300 md:min-h-[170px] ${
+                className={`group relative min-h-42.5 border-t p-0 py-6 text-left transition-all duration-300 md:min-h-42.5 ${
                   isActive
                     ? "border-gold"
                     : "border-[#3b3d35] hover:border-[#81704b]"

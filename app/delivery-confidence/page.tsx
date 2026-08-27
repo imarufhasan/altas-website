@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import SectionLabel from "@/components/SectionLabel";
 import CTASection from "@/components/CTASection";
+import Reveal from "@/components/Reveal";
 
 const CONDITIONS = [
   {
@@ -71,23 +72,19 @@ const CHECKLIST = [
 export default function DeliveryConfidencePage() {
   return (
     <>
-      {/* =========================================================
-          HERO
-      ========================================================== */}
       <PageHero
         label="Delivery Confidence"
         heading="Confidence Built on Evidence."
         description="Delivery Confidence provides a structured view of whether project conditions, readiness, accountability, governance, risk awareness, testing, and operational preparation support confidence in successful delivery."
         buttonLabel="Discuss Delivery Confidence"
+        image="/images/heroes/delivery_confidence.png"
       />
 
-      {/* =========================================================
-          CONFIDENCE IS NOT OPTIMISM
-      ========================================================== */}
       <section className="border-b border-border bg-bg py-20 sm:py-24 lg:py-28">
         <Container className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-          <h2
-            className="
+          <Reveal>
+            <h2
+              className="
               max-w-xl
               font-serif
               text-3xl
@@ -98,12 +95,12 @@ export default function DeliveryConfidencePage() {
               hover:translate-x-1
               md:text-4xl
             "
-          >
-            Confidence Is Not Optimism.
-          </h2>
+            >
+              Confidence Is Not Optimism.
+            </h2>
 
-          <p
-            className="
+            <p
+              className="
               max-w-3xl
               text-[16px]
               leading-[1.8]
@@ -112,40 +109,38 @@ export default function DeliveryConfidencePage() {
               duration-300
               hover:text-cream/80
             "
-          >
-            Delivery confidence should be informed by evidence and the condition
-            of the project rather than optimism, assumptions, or reported
-            progress alone. True executive assurance requires a rigorous
-            examination of the underlying mechanics driving the initiative
-            forward.
-          </p>
+            >
+              Delivery confidence should be informed by evidence and the
+              condition of the project rather than optimism, assumptions, or
+              reported progress alone. True executive assurance requires a
+              rigorous examination of the underlying mechanics driving the
+              initiative forward.
+            </p>
+          </Reveal>
         </Container>
       </section>
 
-      {/* =========================================================
-          CONDITIONS BEHIND CONFIDENCE
-      ========================================================== */}
       <section className="border-b border-border bg-bg-alt py-20 sm:py-24 lg:py-28">
         <Container>
           <SectionLabel>The Framework</SectionLabel>
-
-          <h2
-            className="
+          <Reveal>
+            <h2
+              className="
               mt-3
               font-serif
               text-3xl
               text-cream
               md:text-4xl
             "
-          >
-            The Conditions Behind Confidence
-          </h2>
+            >
+              The Conditions Behind Confidence
+            </h2>
 
-          <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
-            {CONDITIONS.map((condition) => (
-              <article
-                key={condition.n}
-                className="
+            <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
+              {CONDITIONS.map((condition) => (
+                <article
+                  key={condition.n}
+                  className="
                   group
                   relative
                   overflow-hidden
@@ -161,11 +156,11 @@ export default function DeliveryConfidencePage() {
                   hover:border-gold/50
                   hover:shadow-[0_14px_35px_rgba(0,0,0,0.18)]
                 "
-              >
-                {/* Gold hover line */}
-                <span
-                  aria-hidden="true"
-                  className="
+                >
+                  {/* Gold hover line */}
+                  <span
+                    aria-hidden="true"
+                    className="
                     absolute
                     left-0
                     top-0
@@ -176,10 +171,10 @@ export default function DeliveryConfidencePage() {
                     duration-500
                     group-hover:w-full
                   "
-                />
+                  />
 
-                <span
-                  className="
+                  <span
+                    className="
                     font-serif
                     text-3xl
                     text-gold
@@ -187,12 +182,12 @@ export default function DeliveryConfidencePage() {
                     duration-500
                     group-hover:translate-x-1
                   "
-                >
-                  {condition.n}
-                </span>
+                  >
+                    {condition.n}
+                  </span>
 
-                <h3
-                  className="
+                  <h3
+                    className="
                     mt-3
                     font-serif
                     text-xl
@@ -201,25 +196,25 @@ export default function DeliveryConfidencePage() {
                     duration-300
                     group-hover:text-gold
                   "
-                >
-                  {condition.title}
-                </h3>
+                  >
+                    {condition.title}
+                  </h3>
 
-                <p
-                  className="
+                  <p
+                    className="
                     mt-3
                     text-[14px]
                     leading-relaxed
                     text-muted
                   "
-                >
-                  {condition.desc}
-                </p>
+                  >
+                    {condition.desc}
+                  </p>
 
-                {/* Bottom accent */}
-                <span
-                  aria-hidden="true"
-                  className="
+                  {/* Bottom accent */}
+                  <span
+                    aria-hidden="true"
+                    className="
                     absolute
                     bottom-0
                     left-7
@@ -231,14 +226,13 @@ export default function DeliveryConfidencePage() {
                     group-hover:w-16
                     group-hover:bg-gold/60
                   "
-                />
-              </article>
-            ))}
-          </div>
+                  />
+                </article>
+              ))}
+            </div>
 
-          {/* Operational Readiness */}
-          <article
-            className="
+            <article
+              className="
               group
               relative
               mt-5
@@ -255,10 +249,10 @@ export default function DeliveryConfidencePage() {
               hover:shadow-[0_14px_35px_rgba(0,0,0,0.18)]
               md:mt-6
             "
-          >
-            <span
-              aria-hidden="true"
-              className="
+            >
+              <span
+                aria-hidden="true"
+                className="
                 absolute
                 left-0
                 top-0
@@ -269,12 +263,12 @@ export default function DeliveryConfidencePage() {
                 duration-500
                 group-hover:w-full
               "
-            />
+              />
 
-            <span className="font-serif text-3xl text-gold">07</span>
+              <span className="font-serif text-3xl text-gold">07</span>
 
-            <h3
-              className="
+              <h3
+                className="
                 mt-3
                 font-serif
                 text-xl
@@ -283,48 +277,46 @@ export default function DeliveryConfidencePage() {
                 duration-300
                 group-hover:text-gold
               "
-            >
-              Operational Readiness
-            </h3>
+              >
+                Operational Readiness
+              </h3>
 
-            <p
-              className="
+              <p
+                className="
                 mt-3
                 max-w-2xl
                 text-[14px]
                 leading-relaxed
                 text-muted
               "
-            >
-              The end-state environment must be verified as capable of
-              sustaining the new operating model, ensuring seamless transition
-              from project delivery to business-as-usual operations without
-              disruption.
-            </p>
-          </article>
+              >
+                The end-state environment must be verified as capable of
+                sustaining the new operating model, ensuring seamless transition
+                from project delivery to business-as-usual operations without
+                disruption.
+              </p>
+            </article>
+          </Reveal>
         </Container>
       </section>
 
-      {/* =========================================================
-          FROM EVIDENCE TO CONFIDENCE
-      ========================================================== */}
       <section className="border-b border-border bg-bg py-20 sm:py-24 lg:py-28">
         <Container>
-          <h2
-            className="
+          <Reveal>
+            <h2
+              className="
               text-center
               font-serif
               text-2xl
               text-cream
               md:text-3xl
             "
-          >
-            From Evidence to Confidence
-          </h2>
+            >
+              From Evidence to Confidence
+            </h2>
 
-          {/* Flow */}
-          <div
-            className="
+            <div
+              className="
               mt-10
               flex
               flex-wrap
@@ -333,11 +325,11 @@ export default function DeliveryConfidencePage() {
               gap-2
               md:gap-3
             "
-          >
-            {FLOW.map((step, index) => (
-              <div key={step} className="flex items-center gap-2 md:gap-3">
-                <div
-                  className="
+            >
+              {FLOW.map((step, index) => (
+                <div key={step} className="flex items-center gap-2 md:gap-3">
+                  <div
+                    className="
                     group
                     rounded-sm
                     border
@@ -351,9 +343,9 @@ export default function DeliveryConfidencePage() {
                     hover:border-gold/60
                     hover:bg-card-alt
                   "
-                >
-                  <span
-                    className="
+                  >
+                    <span
+                      className="
                       text-[12px]
                       uppercase
                       tracking-[0.08em]
@@ -362,33 +354,32 @@ export default function DeliveryConfidencePage() {
                       duration-300
                       group-hover:text-gold
                     "
-                  >
-                    {step}
-                  </span>
-                </div>
+                    >
+                      {step}
+                    </span>
+                  </div>
 
-                {index < FLOW.length - 1 && (
-                  <span
-                    aria-hidden="true"
-                    className="
+                  {index < FLOW.length - 1 && (
+                    <span
+                      aria-hidden="true"
+                      className="
                       text-lg
                       text-gold/70
                       transition-transform
                       duration-300
                       hover:translate-x-1
                     "
-                  >
-                    →
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
+                    >
+                      →
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
 
-          {/* Operational readiness */}
-          <div className="mt-5 flex justify-center">
-            <div
-              className="
+            <div className="mt-5 flex justify-center">
+              <div
+                className="
                 group
                 rounded-sm
                 border
@@ -401,9 +392,9 @@ export default function DeliveryConfidencePage() {
                 hover:-translate-y-0.5
                 hover:border-gold/60
               "
-            >
-              <span
-                className="
+              >
+                <span
+                  className="
                   text-[12px]
                   uppercase
                   tracking-[0.08em]
@@ -412,25 +403,24 @@ export default function DeliveryConfidencePage() {
                   duration-300
                   group-hover:text-gold
                 "
-              >
-                Operational Readiness
-              </span>
+                >
+                  Operational Readiness
+                </span>
+              </div>
             </div>
-          </div>
 
-          {/* Final confidence */}
-          <div className="mt-8 flex flex-col items-center gap-4">
-            <div
-              className="
+            <div className="mt-8 flex flex-col items-center gap-4">
+              <div
+                className="
                 h-10
                 w-px
                 bg-gold/60
                 animate-pulse
               "
-            />
+              />
 
-            <div
-              className="
+              <div
+                className="
                 rounded-sm
                 border
                 border-gold
@@ -446,20 +436,19 @@ export default function DeliveryConfidencePage() {
                 hover:-translate-y-1
                 hover:shadow-[0_0_35px_rgba(190,160,80,0.16)]
               "
-            >
-              Delivery Confidence
+              >
+                Delivery Confidence
+              </div>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </section>
 
-      {/* =========================================================
-          EXECUTIVE CHECKLIST
-      ========================================================== */}
       <section className="border-b border-border bg-bg-alt py-20 sm:py-24 lg:py-28">
         <Container className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
-          <h2
-            className="
+          <Reveal>
+            <h2
+              className="
               max-w-sm
               font-serif
               text-3xl
@@ -467,15 +456,15 @@ export default function DeliveryConfidencePage() {
               text-cream
               md:text-4xl
             "
-          >
-            A Clearer Basis for Executive Decisions
-          </h2>
+            >
+              A Clearer Basis for Executive Decisions
+            </h2>
 
-          <ul className="space-y-5">
-            {CHECKLIST.map((item) => (
-              <li
-                key={item.title}
-                className="
+            <ul className="space-y-5">
+              {CHECKLIST.map((item) => (
+                <li
+                  key={item.title}
+                  className="
                   group
                   flex
                   gap-4
@@ -489,10 +478,10 @@ export default function DeliveryConfidencePage() {
                   hover:border-border
                   hover:bg-card/40
                 "
-              >
-                {/* Check icon */}
-                <span
-                  className="
+                >
+                  {/* Check icon */}
+                  <span
+                    className="
                     mt-1
                     flex
                     h-6
@@ -510,13 +499,13 @@ export default function DeliveryConfidencePage() {
                     group-hover:bg-gold
                     group-hover:text-bg
                   "
-                >
-                  ✓
-                </span>
+                  >
+                    ✓
+                  </span>
 
-                <div>
-                  <p
-                    className="
+                  <div>
+                    <p
+                      className="
                       text-[13px]
                       font-semibold
                       uppercase
@@ -526,28 +515,31 @@ export default function DeliveryConfidencePage() {
                       duration-300
                       group-hover:translate-x-0.5
                     "
-                  >
-                    {item.title}
-                  </p>
+                    >
+                      {item.title}
+                    </p>
 
-                  <p
-                    className="
+                    <p
+                      className="
                       mt-1.5
                       text-[14px]
                       leading-relaxed
                       text-muted
                     "
-                  >
-                    {item.desc}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
+                    >
+                      {item.desc}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </Container>
       </section>
 
-      <CTASection title="Build Confidence From the Condition of the Project." />
+      <Reveal>
+        <CTASection title="Build Confidence From the Condition of the Project." />
+      </Reveal>
     </>
   );
 }

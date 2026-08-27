@@ -88,7 +88,7 @@ export default function Loading() {
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
             {Array.from({ length: 3 }).map((_, i) => (
               <div key={i} className="overflow-hidden rounded-sm border border-border bg-card">
-                <Skeleton className="h-[180px] w-full rounded-none" />
+                <Skeleton className="h-45 w-full rounded-none" />
                 <div className="p-6">
                   <Skeleton className="h-4 w-24" />
                   <Skeleton className="mt-4 h-5 w-3/4" />

@@ -156,7 +156,7 @@ export default function ProjectDriftInteractive({
                   >
                     <Icon
                       name={item.icon}
-                      className="h-[15px] w-[15px]"
+                      className="h-3.75 w-3.75"
                       strokeWidth={1.45}
                     />
                   </div>
@@ -302,7 +302,7 @@ export default function ProjectDriftInteractive({
                   >
                     <Icon
                       name={item.icon}
-                      className="h-[15px] w-[15px]"
+                      className="h-3.75 w-3.75"
                       strokeWidth={1.45}
                     />
                   </div>

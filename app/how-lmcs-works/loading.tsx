@@ -33,7 +33,7 @@ export default function Loading() {
 
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-14 lg:grid-cols-5">
             {Array.from({ length: 5 }).map((_, index) => (
-              <Skeleton key={index} className="h-[190px] w-full" />
+              <Skeleton key={index} className="h-47.5 w-full" />
             ))}
           </div>
         </Container>
