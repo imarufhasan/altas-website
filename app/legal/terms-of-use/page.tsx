@@ -1,17 +1,17 @@
-import LegalPage from "@/components/LegalPage";
+// FILE PATH: app/legal/terms-of-use/page.tsx
 
-export default function TermsOfUsePage() {
-  return (
-    <LegalPage title="Terms of Use">
-      <p>
-        By accessing this site, you agree to use its content for informational
-        purposes related to evaluating LMCS advisory services. Content on this
-        site does not constitute a binding proposal or contractual offer.
-      </p>
-      <p>
-        LMCS reserves the right to update these terms at any time. Continued
-        use of the site constitutes acceptance of the current terms.
-      </p>
-    </LegalPage>
-  );
+import { notFound } from "next/navigation";
+import { getLegalDocument } from "@/lib/legal";
+import LegalDocumentBlock from "@/components/legal/LegalContent";
+
+export const metadata = {
+  title: "Terms of Use | LMCS",
+  description: "Terms governing access to and use of the LMCS website.",
+};
+
+export default async function TermsOfUsePage() {
+  const doc = await getLegalDocument("terms-of-use");
+  if (!doc) return notFound();
+
+  return <LegalDocumentBlock doc={doc} />;
 }

@@ -1,19 +1,18 @@
-import LegalPage from "@/components/LegalPage";
+// FILE PATH: app/legal/privacy-notice/page.tsx
 
-export default function PrivacyNoticePage() {
-  return (
-    <LegalPage title="Privacy Notice">
-      <p>
-        This Privacy Notice describes how Leadership Mission Critical
-        Solutions (LMCS) collects, uses, and safeguards information
-        submitted through this site, including inquiries made via the
-        Contact page.
-      </p>
-      <p>
-        Information you provide is used solely to respond to your inquiry
-        and to administer the relationship between you and LMCS. We do not
-        sell personal information to third parties.
-      </p>
-    </LegalPage>
-  );
+import { notFound } from "next/navigation";
+import { getLegalDocument } from "@/lib/legal";
+import LegalDocumentBlock from "@/components/legal/LegalContent";
+
+export const metadata = {
+  title: "Privacy Notice | LMCS",
+  description:
+    "How LMCS handles information provided through this website and its inquiry channels.",
+};
+
+export default async function PrivacyNoticePage() {
+  const doc = await getLegalDocument("privacy-notice");
+  if (!doc) return notFound();
+
+  return <LegalDocumentBlock doc={doc} />;
 }

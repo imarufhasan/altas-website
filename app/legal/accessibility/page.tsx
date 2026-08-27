@@ -1,18 +1,18 @@
-import LegalPage from "@/components/LegalPage";
+// FILE PATH: app/legal/accessibility/page.tsx
 
-export default function AccessibilityPage() {
-  return (
-    <LegalPage title="Accessibility Statement">
-      <p>
-        LMCS is committed to ensuring this site is accessible to the widest
-        possible audience, including people with disabilities. We follow
-        recognized accessibility practices for navigation, color contrast,
-        and keyboard interaction.
-      </p>
-      <p>
-        If you encounter an accessibility barrier on this site, please
-        contact us so we can address it.
-      </p>
-    </LegalPage>
-  );
+import { notFound } from "next/navigation";
+import { getLegalDocument } from "@/lib/legal";
+import LegalDocumentBlock from "@/components/legal/LegalContent";
+
+export const metadata = {
+  title: "Accessibility Statement | LMCS",
+  description:
+    "LMCS is committed to making its website accessible and usable for people with different abilities.",
+};
+
+export default async function AccessibilityPage() {
+  const doc = await getLegalDocument("accessibility");
+  if (!doc) return notFound();
+
+  return <LegalDocumentBlock doc={doc} />;
 }
