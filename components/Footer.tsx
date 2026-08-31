@@ -35,7 +35,7 @@ export default function Footer() {
     <footer className="border-t border-border bg-bg">
       <Container className="grid grid-cols-1 gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Link href="/" className="font-serif text-2xl text-gold">
+          <Link href="/" className="flex items-center transition-opacity duration-200 hover:opacity-80">
             LMCS
           </Link>
           <p className="mt-4 font-serif text-lg italic text-cream">

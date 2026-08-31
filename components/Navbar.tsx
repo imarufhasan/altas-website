@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+
 import Container from "./Container";
 import Button from "./Button";
 import { CONTACT_HREF, NAV_ITEMS } from "@/lib/nav";
@@ -14,11 +16,19 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur">
       <Container className="flex items-center justify-between py-5">
+        {/* Logo */}
         <Link
           href="/"
-          className="font-serif text-2xl tracking-[0.08em] text-cream"
+          className="flex items-center transition-opacity duration-200 hover:opacity-80"
         >
-          ATLAS
+          <Image
+            src="/images/logo.png"
+            alt="ATLAS"
+            width={100}
+            height={40}
+            priority
+            className="h-auto w-30 object-contain"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -27,15 +37,21 @@ export default function Navbar() {
               item.href === "/"
                 ? pathname === "/"
                 : pathname.startsWith(item.href);
+
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-[15px] transition-colors hover:text-gold ${
-                  active ? "text-gold border-b border-gold pb-1" : "text-cream"
+                className={`relative text-[15px] transition-colors duration-200 hover:text-gold focus-visible:outline-none focus-visible:text-gold ${
+                  active ? "text-gold" : "text-cream"
                 }`}
               >
                 {item.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-gold transition-all duration-300 ${
+                    active ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
               </Link>
             );
           })}
@@ -72,6 +88,7 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
+
             <Link
               href={CONTACT_HREF}
               onClick={() => setOpen(false)}
