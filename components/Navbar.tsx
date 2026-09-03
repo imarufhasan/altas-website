@@ -16,9 +16,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur">
       <Container className="flex items-center justify-between py-5">
-        {/* Logo */}
         <Link
-          href="/"
+          href="/home"
           className="flex items-center transition-opacity duration-200 hover:opacity-80"
         >
           <Image
@@ -34,8 +33,8 @@ export default function Navbar() {
         <nav className="hidden items-center gap-8 lg:flex">
           {NAV_ITEMS.map((item) => {
             const active =
-              item.href === "/"
-                ? pathname === "/"
+              item.href === "/home"
+                ? pathname === "/home"
                 : pathname.startsWith(item.href);
 
             return (

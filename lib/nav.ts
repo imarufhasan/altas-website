@@ -6,7 +6,7 @@ export type NavItem = {
 // Single source of truth for the primary navigation.
 // Every label here renders as a real, clickable Next.js <Link>.
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Home", href: "/" },
+  { label: "Home", href: "/home" },
   { label: "How LMCS Works", href: "/how-lmcs-works" },
   { label: "Project Assessment", href: "/project-assessment" },
   { label: "ATLAS", href: "/atlas" },
