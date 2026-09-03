@@ -38,7 +38,6 @@ export default async function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-border bg-[#0d0f0e]">
-        {/* Background */}
         <div className="pointer-events-none absolute inset-0">
           <Image
             src="/images/insight/1insight.png"
@@ -72,12 +71,8 @@ export default async function HomePage() {
       xl:gap-20
     "
         >
-          {/* =========================================================
-        LEFT — HERO CONTENT
-    ========================================================= */}
           <Reveal direction="right">
             <div className="max-w-2xl">
-              {/* Eyebrow */}
               <div className="mb-10">
                 <Image
                   src="/images/lmcs_logo.png"
@@ -121,7 +116,6 @@ export default async function HomePage() {
                 <span className="text-gold">Infrastructure.</span>
               </h1>
 
-              {/* Description */}
               <p
                 className="
             mt-6
@@ -141,7 +135,6 @@ export default async function HomePage() {
                 through Operations.
               </p>
 
-              {/* CTA */}
               <div
                 className="
             mt-7
@@ -161,9 +154,6 @@ export default async function HomePage() {
             </div>
           </Reveal>
 
-          {/* =========================================================
-        RIGHT — ASSESSMENT FRAMEWORK
-    ========================================================= */}
           <Reveal direction="left" delay={150}>
             <div
               className="
@@ -208,10 +198,8 @@ export default async function HomePage() {
                   Framework
                 </h2>
 
-                {/* Divider */}
                 <div className="mt-5 h-px w-full bg-[#3a3c35]" />
 
-                {/* Framework */}
                 <ul className="mt-0">
                   {framework.map((f) => (
                     <li
@@ -228,7 +216,6 @@ export default async function HomePage() {
                   sm:py-4
                 "
                     >
-                      {/* Icon */}
                       <Icon
                         name={f.icon}
                         className="
