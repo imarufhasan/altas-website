@@ -7,9 +7,14 @@ import {
   BadgeCheck,
   ClipboardCheck,
   Settings,
-  ChartBarBig,
+  ChartColumnBig,
   CornerUpRight,
   ShieldCheck,
+  ChartLine,
+  GraduationCap,
+  Workflow,
+  ListChecks,
+  Shield,
   type LucideProps,
 } from "lucide-react";
 
@@ -19,19 +24,21 @@ import type { IconName } from "@/lib/api";
 // import Icon, { type IconName } from "@/components/Icon";
 export type { IconName } from "@/lib/api";
 
-const ICON_MAP: Record<
-  IconName,
-  React.ComponentType<LucideProps>
-> = {
+const ICON_MAP: Record<IconName, React.ComponentType<LucideProps>> = {
   landmark: Landmark,
   clock: Clock,
   "triangle-alert": TriangleAlert,
   "badge-check": BadgeCheck,
   "clipboard-check": ClipboardCheck,
   settings: Settings,
-  "chart-square": ChartBarBig,
+  "chart-square": ChartColumnBig,
   "route-square": CornerUpRight,
   "shield-check": ShieldCheck,
+  "chart-line": ChartLine,
+  "graduation-cap": GraduationCap,
+  workflow: Workflow,
+  "list-checks": ListChecks,
+  shield: Shield,
 };
 
 type IconProps = {

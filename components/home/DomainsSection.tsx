@@ -1,3 +1,5 @@
+// FILE PATH: components/home/DomainsSection.tsx
+
 "use client";
 
 import { useState } from "react";
@@ -21,7 +23,7 @@ export default function DomainsSection({ domains }: Props) {
       <Container>
         <SectionLabel>Methodology</SectionLabel>
 
-        <h2 className="mt-3 max-w-xl font-serif text-3xl text-cream md:text-4xl">
+        <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-[1.12] text-cream md:text-5xl lg:text-[54px]">
           Understand the Condition Beneath the Commitment.
         </h2>
 
@@ -48,7 +50,7 @@ export default function DomainsSection({ domains }: Props) {
 
                 <div className="pr-5">
                   <h3
-                    className={`font-serif text-xl transition-colors duration-300 ${
+                    className={`font-serif text-[26px] leading-tight transition-colors duration-300 ${
                       isActive
                         ? "text-cream"
                         : "text-[#d8d5cc] group-hover:text-cream"

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+
 import Container from "./Container";
 import Button from "./Button";
 import { CONTACT_HREF, NAV_ITEMS } from "@/lib/nav";
@@ -14,25 +15,28 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur">
       <Container className="flex items-center justify-between py-5">
+        {/* Logo */}
         <Link
           href="/"
-          className="font-serif text-2xl tracking-[0.08em] text-cream"
+          className="shrink-0 font-serif text-2xl tracking-[0.08em] text-cream"
         >
           ATLAS
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        {/* Desktop Navigation */}
+        <nav className="hidden items-center gap-x-6 xl:flex">
           {NAV_ITEMS.map((item) => {
             const active =
               item.href === "/"
                 ? pathname === "/"
                 : pathname.startsWith(item.href);
+
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-[15px] transition-colors hover:text-gold ${
-                  active ? "text-gold border-b border-gold pb-1" : "text-cream"
+                className={`whitespace-nowrap px-1 py-1 text-[14px] transition-colors hover:text-gold ${
+                  active ? "border-b border-gold text-gold" : "text-cream"
                 }`}
               >
                 {item.label}
@@ -41,16 +45,22 @@ export default function Navbar() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
-          <Button href={CONTACT_HREF} variant="primary" className="px-6">
+        {/* Contact Button */}
+        <div className="hidden xl:block">
+          <Button
+            href={CONTACT_HREF}
+            variant="primary"
+            className="whitespace-nowrap px-6"
+          >
             Contact Us
           </Button>
         </div>
 
+        {/* Mobile Menu Button */}
         <button
           aria-label="Toggle menu"
           aria-expanded={open}
-          className="flex flex-col gap-1.5 lg:hidden"
+          className="flex flex-col gap-1.5 xl:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           <span className="h-[1.5px] w-6 bg-cream" />
@@ -59,19 +69,30 @@ export default function Navbar() {
         </button>
       </Container>
 
+      {/* Mobile Menu */}
       {open && (
-        <div className="border-t border-border lg:hidden">
+        <div className="border-t border-border xl:hidden">
           <Container className="flex flex-col gap-1 py-4">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="py-2.5 text-[15px] text-cream hover:text-gold"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className={`rounded-sm px-2 py-3 text-[15px] transition-colors hover:text-gold ${
+                    active ? "bg-white/5 text-gold" : "text-cream"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+
             <Link
               href={CONTACT_HREF}
               onClick={() => setOpen(false)}

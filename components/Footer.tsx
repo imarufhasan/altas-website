@@ -53,7 +53,10 @@ export default function Footer() {
       </Container>
 
       <Container className="flex flex-col items-start justify-between gap-4 border-t border-border py-6 text-[13px] text-muted md:flex-row md:items-center">
-        <p>© 2024 Leadership Mission Critical Solutions. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} Leadership Mission Critical Solutions.
+          All rights reserved.
+        </p>
         <div className="flex gap-6">
           <Link href="/legal/privacy-notice" className="hover:text-gold">
             Privacy Notice
