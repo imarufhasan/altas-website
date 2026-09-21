@@ -7,6 +7,7 @@ import { useState } from "react";
 import Container from "./Container";
 import Button from "./Button";
 import { CONTACT_HREF, NAV_ITEMS } from "@/lib/nav";
+import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -14,17 +15,21 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur">
-      <Container className="flex items-center justify-between py-5">
+      <Container wide className="flex items-center justify-between py-5">
         {/* Logo */}
-        <Link
-          href="/"
-          className="shrink-0 font-serif text-2xl tracking-[0.08em] text-cream"
-        >
-          ATLAS
+        <Link href="/" className="shrink-0">
+          <Image
+            src="/images/lmcs_icon.png"
+            alt="ATLAS"
+            width={88}
+            height={88}
+            className="h-12 w-28 object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-x-6 xl:flex">
+        <nav className="hidden items-center gap-x-6 xl:flex 2xl:gap-x-8">
           {NAV_ITEMS.map((item) => {
             const active =
               item.href === "/"
@@ -72,7 +77,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {open && (
         <div className="border-t border-border xl:hidden">
-          <Container className="flex flex-col gap-1 py-4">
+          <Container wide className="flex flex-col gap-1 py-4">
             {NAV_ITEMS.map((item) => {
               const active =
                 item.href === "/"

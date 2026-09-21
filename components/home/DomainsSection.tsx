@@ -20,7 +20,7 @@ export default function DomainsSection({ domains }: Props) {
 
   return (
     <section className="border-b border-border bg-bg py-24">
-      <Container>
+      <Container wide>
         <SectionLabel>Methodology</SectionLabel>
 
         <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-[1.12] text-cream md:text-5xl lg:text-[54px]">

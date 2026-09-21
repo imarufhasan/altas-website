@@ -3,6 +3,12 @@ import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 
+/**
+ * Figma tokens used on this page
+ * bg #121411 · card / alt #1A1C19 · border #4D4639
+ * gold #E8C177 · cream #E2E3DE · muted #D1C5B4
+ */
+
 const DOMAINS = [
   {
     title: "Governance",
@@ -82,185 +88,92 @@ export default function ProjectAssessmentPage() {
   return (
     <>
       <PageHero
+        variant="large"
+        buttonArrow
         label="Project Assessment"
-        heading="Understand the Condition Beneath the Commitment."
-        description="LMCS assesses project condition through a structured review of governance, schedule readiness, risks and constraints, accountability, testing readiness, and operational readiness."
-        buttonLabel="Schedule an Executive Discussion"
+        heading={
+          <>
+            Six Domains Examined Against Evidence.
+            <br />
+            The Independent Condition Report &amp; Evidence Register.
+          </>
+        }
+        description="LMCS delivers an unvarnished Project Condition Report and comprehensive Evidence Register. Through an independent, rigorous examination of governance, schedule logic, constraints, accountability, testing, and operational readiness, we provide leadership with the empirical reality of their mission-critical initiative before capital and executive commitments advance."
+        buttonLabel="SCHEDULE AN EXECUTIVE DISCUSSION"
         buttonHref="/contact"
         image="/images/heroes/project_assessment.png"
       />
 
       {/* Assessment Domains */}
-      <section className="border-b border-border bg-bg py-20 md:py-24">
-        <Container>
+      <section className="border-b border-[#4D4639] bg-[#121411] py-16 sm:py-20 lg:py-30">
+        <Container wide>
           <Reveal>
-            <div className="max-w-2xl">
-              <h2 className="font-serif text-3xl text-cream md:text-4xl">
-                Assessment Domains
-              </h2>
+            <h2 className="font-serif text-[36px] leading-[1.1] text-[#E2E3DE] sm:text-5xl lg:text-[64px]">
+              Assessment Domains
+            </h2>
 
-              <div className="mt-3 h-px w-10 bg-gold transition-all duration-300 hover:w-16" />
-            </div>
+            <div className="mt-4 h-px w-24 bg-[#E8C177]" />
 
-            <div className="mt-12 grid grid-cols-1 gap-5 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+            <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 sm:mt-16 md:grid-cols-2 md:gap-y-16 lg:gap-y-24">
               {DOMAINS.map((d) => (
-                <button
+                <article
                   key={d.title}
-                  type="button"
-                  className="
-                  group relative min-h-47.5
-                  cursor-pointer overflow-hidden
-                  rounded-sm border border-border
-                  bg-card p-6 text-left
-                  transition-all duration-300 ease-out
-                  hover:-translate-y-1
-                  hover:border-gold
-                  hover:bg-[#20231f]
-                  hover:shadow-[0_10px_30px_rgba(0,0,0,0.18)]
-                  focus-visible:outline-none
-                  focus-visible:ring-2
-                  focus-visible:ring-gold
-                  focus-visible:ring-offset-2
-                  focus-visible:ring-offset-bg
-                  active:translate-y-0
-                  sm:p-7
-                "
+                  className="group relative border-l border-[#4D4639] py-5 pl-8 sm:pl-12 lg:pl-16"
                 >
-                  {/* Top accent */}
+                  {/* Gold accent on the left border */}
                   <span
                     aria-hidden="true"
-                    className="
-                    absolute left-0 top-0 h-full w-0.5
-                    bg-gold opacity-70
-                    transition-all duration-300
-                    group-hover:w-1
-                    group-hover:opacity-100
-                  "
+                    className="absolute -left-px top-0 h-16 w-1 bg-[#E8C177] transition-[height] duration-300 ease-out group-hover:h-full"
                   />
 
-                  <div className="flex items-start justify-between gap-4">
-                    <h3
-                      className="
-                      text-[12px] font-semibold uppercase
-                      tracking-[0.14em] text-gold
-                      transition-colors duration-300
-                      group-hover:text-gold-light
-                    "
-                    >
-                      {d.title}
-                    </h3>
+                  <h3 className="font-serif text-[24px] uppercase leading-none tracking-[0.1em] text-[#E8C177] sm:text-[28px] lg:text-[32px]">
+                    {d.title}
+                  </h3>
 
-                    <span
-                      aria-hidden="true"
-                      className="
-                      shrink-0 text-lg text-gold/50
-                      transition-all duration-300
-                      group-hover:translate-x-1
-                      group-hover:text-gold
-                    "
-                    >
-                      →
-                    </span>
-                  </div>
-
-                  <p
-                    className="
-                    mt-4 text-[14px] leading-relaxed text-muted
-                    transition-colors duration-300
-                    group-hover:text-[#cbc8bd]
-                    sm:text-[15px]
-                  "
-                  >
+                  <p className="mt-5 text-[15px] leading-[1.65] text-[#D1C5B4] sm:text-[16px]">
                     {d.desc}
                   </p>
-                </button>
+                </article>
               ))}
             </div>
           </Reveal>
         </Container>
       </section>
 
-      {/* Evidence Checklist */}
-      <section className="border-b border-border bg-bg-alt py-20 md:py-24">
-        <Container>
+      {/* Assessment Evidence */}
+      <section className="border-b border-[#4D4639] bg-[#1A1C19] py-16 sm:py-20 lg:py-30">
+        <Container wide>
           <Reveal>
-            <div className="max-w-2xl">
-              <h2 className="font-serif text-3xl text-cream md:text-4xl">
+            <div className="max-w-3xl">
+              <h2 className="font-serif text-[32px] leading-[1.1] text-[#E2E3DE] sm:text-4xl lg:text-5xl">
                 Assessment Evidence
               </h2>
 
-              <p className="mt-4 text-[15px] leading-relaxed text-muted sm:text-[16px]">
+              <p className="mt-4 text-[16px] leading-[1.65] text-[#D1C5B4] sm:text-[17px]">
                 Rigorous evidentiary requirements across all domains ensure
                 objective evaluation rather than subjective assurance.
               </p>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-10">
+            {/* 1px gaps over the border colour = the thin grid lines */}
+            <div className="mt-12 grid grid-cols-1 gap-px bg-[#4D4639] sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
               {EVIDENCE.map((group) => (
-                <div
-                  key={group.title}
-                  className="
-                  rounded-sm border border-transparent
-                  p-4 -m-4
-                  transition-all duration-300
-                  hover:border-border
-                  hover:bg-[#171914]
-                "
-                >
-                  <p
-                    className="
-                    text-[12px] font-semibold uppercase
-                    tracking-[0.14em] text-gold
-                  "
-                  >
+                <div key={group.title} className="bg-[#1A1C19] p-6 sm:p-8">
+                  <h3 className="text-[14px] font-semibold uppercase leading-4 tracking-[0.05em] text-[#E8C177]">
                     {group.title}
-                  </p>
+                  </h3>
 
-                  <ul className="mt-4 space-y-2">
+                  <ul className="mt-5 space-y-3">
                     {group.items.map((item) => (
-                      <li key={item}>
-                        <button
-                          type="button"
-                          className="
-                          group flex min-h-10 w-full
-                          cursor-pointer items-center gap-3
-                          rounded-sm px-2 py-2
-                          text-left text-[14px] text-cream
-                          transition-all duration-200
-                          hover:bg-[#242720]
-                          hover:text-gold
-                          focus-visible:outline-none
-                          focus-visible:ring-1
-                          focus-visible:ring-gold
-                          active:bg-[#2a2d26]
-                        "
-                        >
-                          <span
-                            aria-hidden="true"
-                            className="
-                            flex h-3.5 w-3.5 shrink-0
-                            items-center justify-center
-                            rounded-xs border border-muted
-                            transition-all duration-200
-                            group-hover:border-gold
-                            group-hover:bg-gold
-                          "
-                          >
-                            <span
-                              className="
-                              h-1.5 w-1.5 rounded-full
-                              bg-[#171914]
-                              opacity-0
-                              transition-opacity duration-200
-                              group-hover:opacity-100
-                            "
-                            />
-                          </span>
-
-                          <span className="transition-transform duration-200 group-hover:translate-x-0.5">
-                            {item}
-                          </span>
-                        </button>
+                      <li
+                        key={item}
+                        className="flex min-h-6 items-center gap-2 text-[15px] leading-6 text-[#D1C5B4]"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="relative top-[5px] h-2.5 w-2.5 shrink-0 border border-[#E8C177]"
+                        />
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -272,102 +185,51 @@ export default function ProjectAssessmentPage() {
       </section>
 
       {/* Assessment Phases */}
-      <section className="border-b border-border bg-bg py-20 md:py-24">
-        <Container>
+      <section className="border-b border-[#4D4639] bg-[#121411] py-16 sm:py-20 lg:py-30">
+        <Container wide>
           <Reveal>
-            <div className="max-w-2xl">
-              <h2 className="font-serif text-3xl text-cream md:text-4xl">
+            <div className="max-w-4xl">
+              <h2 className="font-serif text-[32px] leading-[1.1] text-[#E2E3DE] sm:text-4xl lg:text-5xl">
                 Project Assessment and Delivery Confidence
               </h2>
 
-              <p className="mt-4 text-[15px] leading-relaxed text-muted sm:text-[16px]">
+              <p className="mt-4 text-[16px] leading-[1.65] text-[#D1C5B4] sm:text-[17px]">
                 The direct correlation between empirical assessment and
                 actionable confidence.
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 md:mt-12 lg:grid-cols-3">
-              {PHASES.map((p, index) => (
-                <button
-                  key={p.label}
-                  type="button"
-                  className={`
-                  group relative
-                  min-h-26.25
-                  cursor-pointer
-                  rounded-sm border
-                  px-5 py-5 text-left
-                  transition-all duration-300 ease-out
-                  hover:-translate-y-1
-                  hover:shadow-[0_10px_25px_rgba(0,0,0,0.16)]
-                  focus-visible:outline-none
-                  focus-visible:ring-2
-                  focus-visible:ring-gold
-                  focus-visible:ring-offset-2
-                  focus-visible:ring-offset-bg
-                  active:translate-y-0
-                  ${
-                    p.active
-                      ? "border-gold bg-[#1c1d18]"
-                      : "border-border bg-card hover:border-gold hover:bg-[#1c1f1a]"
-                  }
-                `}
-                >
-                  {/* Phase number */}
-                  <span
-                    className={`
-                    absolute right-4 top-4
-                    text-[10px] font-semibold
-                    tracking-[0.12em]
-                    ${
-                      p.active
-                        ? "text-gold"
-                        : "text-muted/50 group-hover:text-gold"
-                    }
-                  `}
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+            <div className="relative mt-10 py-2 sm:mt-16 xl:py-12">
+              {/* Connector line running behind the boxes */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 top-1/2 hidden h-px bg-[#4D4639] xl:block"
+              />
 
-                  <p
-                    className={`
-                    text-[10px] uppercase tracking-[0.14em]
-                    transition-colors duration-300
-                    ${
+              <ol className="relative grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-[repeat(5,minmax(0,1fr))_minmax(0,1.2fr)] xl:gap-8">
+                {PHASES.map((p) => (
+                  <li
+                    key={p.label}
+                    className={`flex min-h-[98px] flex-col items-center justify-center border bg-[#121411] px-3 text-center transition-colors duration-300 ${
                       p.active
-                        ? "text-gold"
-                        : "text-muted group-hover:text-gold"
-                    }
-                  `}
+                        ? "border-[#E8C177]"
+                        : "border-[#4D4639] hover:border-[#E8C177]/60"
+                    }`}
                   >
-                    {p.label}
-                  </p>
+                    <span className="text-[12px] font-medium uppercase leading-4 tracking-[0.14em] text-[#E8C177]">
+                      {p.label}
+                    </span>
 
-                  <p
-                    className={`
-                    mt-2 text-[15px] font-semibold
-                    transition-colors duration-300
-                    ${
-                      p.active
-                        ? "text-gold"
-                        : "text-cream group-hover:text-gold"
-                    }
-                  `}
-                  >
-                    {p.title}
-                  </p>
-
-                  {/* Bottom progress line */}
-                  <span
-                    aria-hidden="true"
-                    className={`
-                    absolute bottom-0 left-0 h-px
-                    bg-gold transition-all duration-500
-                    ${p.active ? "w-full" : "w-0 group-hover:w-full"}
-                  `}
-                  />
-                </button>
-              ))}
+                    <span
+                      className={`mt-2.5 text-[14px] font-medium leading-5 ${
+                        p.active ? "text-[#E8C177]" : "text-[#E2E3DE]"
+                      }`}
+                    >
+                      {p.title}
+                    </span>
+                  </li>
+                ))}
+              </ol>
             </div>
           </Reveal>
         </Container>
@@ -375,6 +237,7 @@ export default function ProjectAssessmentPage() {
 
       <Reveal>
         <CTASection
+          variant="large"
           title="Start With the Project Condition."
           description="Engage LMCS for a rigorous, independent assessment of your most critical initiatives. Replace assumption with evidence."
         />

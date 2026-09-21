@@ -1,5 +1,3 @@
-// FILE PATH: app/page.tsx
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -60,7 +58,10 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-linear-to-t from-[#0d0f0e] via-transparent to-transparent" />
         </div>
 
-        <Container className="relative z-10 grid grid-cols-1 items-center gap-12 py-20 sm:py-24 lg:grid-cols-[minmax(0,1fr)_460px] lg:gap-16 lg:py-28">
+        <Container
+          wide
+          className="relative z-10 grid grid-cols-1 items-center gap-12 py-20 sm:py-24 lg:grid-cols-[minmax(0,1fr)_460px] lg:gap-16 lg:py-28"
+        >
           <Reveal direction="right">
             <Image
               src="/images/lmcs_icon.png"
@@ -75,9 +76,9 @@ export default async function HomePage() {
               <SectionLabel>Leadership is Infrastructure</SectionLabel>
             </div>
 
-            <h1 className="mt-5 max-w-2xl font-serif text-5xl leading-[1.1] text-cream md:text-6xl lg:text-[64px]">
-              Mission-critical leadership and project intelligence built around
-              readiness.
+            <h1 className="mt-5 max-w-3xl font-serif text-5xl leading-[1.1] text-cream md:text-6xl lg:text-[64px]">
+              Mission-critical leadership and project intelligence built
+              around readiness.
             </h1>
 
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted sm:text-lg">
@@ -87,11 +88,11 @@ export default async function HomePage() {
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-              <Button href="/atlas" square>
+              <Button href="/atlas">
                 EXPLORE ATLAS
               </Button>
 
-              <Button href="/contact" variant="ghost" square>
+              <Button href="/contact" variant="ghost">
                 SCHEDULE EXECUTIVE DISCOVERY
               </Button>
             </div>
@@ -112,7 +113,7 @@ export default async function HomePage() {
                   <li key={f.title} className="flex items-start gap-3.5">
                     <Icon
                       name={f.icon}
-                      className="mt-0.5 h-[18px] w-[18px] shrink-0 text-gold"
+                      className="mt-0.5 h-4.5 w-4.5 shrink-0 text-gold"
                       strokeWidth={1.75}
                     />
 
@@ -141,7 +142,7 @@ export default async function HomePage() {
 
       {/* ───────────── Pillars ───────────── */}
       <section className="border-b border-border bg-bg-alt py-24">
-        <Container>
+        <Container wide>
           <Reveal className="mx-auto max-w-3xl text-center">
             <h2 className={H2}>Helping Leaders See What Others Miss.</h2>
 
@@ -178,7 +179,10 @@ export default async function HomePage() {
 
       {/* ───────────── Project Drift ───────────── */}
       <section className="border-b border-border bg-[#282826] py-24">
-        <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <Container
+          wide
+          className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16"
+        >
           <Reveal direction="right" className="text-center">
             <SectionLabel>Project Drift</SectionLabel>
 
@@ -215,7 +219,7 @@ export default async function HomePage() {
 
       {/* ───────────── Path to Delivery Confidence ───────────── */}
       <section className="border-b border-border bg-bg py-24">
-        <Container>
+        <Container wide>
           <Reveal>
             <h2 className={`text-center ${H2}`}>
               The Path to Delivery Confidence
@@ -230,7 +234,7 @@ export default async function HomePage() {
 
       {/* ───────────── LMCS Academy ───────────── */}
       <section className="border-b border-border bg-bg-alt py-24">
-        <Container>
+        <Container wide>
           <Reveal>
             <SectionLabel>Organizational Capability</SectionLabel>
 
@@ -274,7 +278,7 @@ export default async function HomePage() {
 
       {/* ───────────── Executive Insights ───────────── */}
       <section className="border-b border-border bg-bg py-24">
-        <Container>
+        <Container wide>
           <Reveal>
             <div className="flex items-end justify-between gap-4 border-b border-border pb-6">
               <h2 className={H2}>Executive Insights</h2>

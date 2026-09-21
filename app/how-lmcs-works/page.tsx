@@ -1,3 +1,17 @@
+import {
+  CalendarDays,
+  ClipboardCheck,
+  FileSearch,
+  Gavel,
+  Landmark,
+  LayoutGrid,
+  ListChecks,
+  Rocket,
+  ShieldCheck,
+  TriangleAlert,
+  type LucideIcon,
+} from "lucide-react";
+
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import SectionLabel from "@/components/SectionLabel";
@@ -33,30 +47,36 @@ const STEPS = [
   },
 ];
 
-const DOMAINS = [
+const DOMAINS: { title: string; desc: string; icon: LucideIcon }[] = [
   {
     title: "Governance",
-    desc: "Evaluating the structures, processes, and authorities that direct and control the project. Ensuring decisions are made effectively and at the right level.",
+    desc: "Interrogating whether escalation paths are clear, decisions are enforced, or the organization is substituting consensus for authoritative leadership during disruption.",
+    icon: Landmark,
   },
   {
     title: "Schedule Readiness",
-    desc: "Validating the realism, critical path integrity, and resource alignment of the project timeline. Exposing hidden optimism bias.",
+    desc: "Examining critical path validity beyond Gantt charts—testing sequence logic, resource actuals, and latent dependency compression.",
+    icon: CalendarDays,
   },
   {
     title: "Risk & Constraints",
-    desc: "Identifying unmitigated threats and systemic limitations that will impede progress, moving beyond performative risk registers.",
+    desc: "Forensic analysis of unmitigated exposure and systemic bottlenecks, translating abstract risk registers into verified temporal and capital impacts.",
+    icon: TriangleAlert,
   },
   {
     title: "Accountability",
-    desc: "Assessing clarity of roles, ownership of outcomes, and the cultural willingness to hold individuals and vendors to standard.",
+    desc: "Verifying whether nominal owners possess both the formal mandate and operational capability to enforce delivery across critical paths.",
+    icon: ShieldCheck,
   },
   {
     title: "Testing Readiness",
-    desc: "Ensuring quality assurance frameworks are robust, environments are prepared, and testing strategy aligns to go-live criteria.",
+    desc: "Validating quality assurance frameworks against production realities, ensuring verification environments reflect operational conditions rather than synthetic optimism.",
+    icon: ClipboardCheck,
   },
   {
     title: "Operational Readiness",
-    desc: "Verifying the business is genuinely prepared to receive, operate, and maintain the delivered solution without disruption.",
+    desc: "Evaluating the operational absorption threshold—verifying that turnover documentation, training, and steady-state governance ensure sustainable adoption.",
+    icon: Rocket,
   },
 ];
 
@@ -68,12 +88,42 @@ const EVIDENCE_STEPS = [
   "Advancement",
 ];
 
-const LIFECYCLE = [
-  "Project Condition",
-  "Assessment",
-  "Evidence",
-  "Readiness",
-  "Accountability",
+const LIFECYCLE: {
+  n: string;
+  title: string;
+  desc: string;
+  icon: LucideIcon;
+}[] = [
+  {
+    n: "01",
+    title: "Condition",
+    desc: "Establish empirical project reality",
+    icon: LayoutGrid,
+  },
+  {
+    n: "02",
+    title: "Evidence",
+    desc: "Audit artifacts beyond dashboards",
+    icon: FileSearch,
+  },
+  {
+    n: "03",
+    title: "Readiness",
+    desc: "Evaluate operational gate criteria",
+    icon: ListChecks,
+  },
+  {
+    n: "04",
+    title: "Accountability",
+    desc: "Pinpoint critical path ownership",
+    icon: ShieldCheck,
+  },
+  {
+    n: "05",
+    title: "Decision",
+    desc: "Provide executive go/no-go basis",
+    icon: Gavel,
+  },
 ];
 
 export default function HowLmcsWorksPage() {
@@ -83,30 +133,33 @@ export default function HowLmcsWorksPage() {
         label="How LMCS Works"
         heading="A Structured Approach to Project Condition."
         description="LMCS uses a structured assessment approach to understand project condition through governance, readiness, evidence, accountability, risks and constraints, testing, and operational readiness."
-        buttonLabel="Discuss a Project Assessment"
+        buttonLabel="DISCUSS A PROJECT ASSESSMENT"
         image="/images/heroes/how-lmcs-works2.png"
       />
 
-      {/* Observation */}
-      <section className="border-b border-border bg-bg py-20 md:py-24">
-        <Container>
+      {/* ───────────── Observation + Steps ───────────── */}
+      <section className="border-b border-border bg-bg py-20 md:py-24 lg:py-32">
+        <Container wide>
           <Reveal>
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-12">
-              <h2 className="font-serif text-3xl leading-tight text-cream md:text-4xl">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+              <h2 className="max-w-lg font-serif text-4xl leading-[1.15] text-cream/90 md:text-5xl">
                 From Observation to Executive Understanding.
               </h2>
 
-              <p className="border-l border-border pl-5 text-[15px] leading-relaxed text-muted sm:pl-8 sm:text-[16px]">
+              <p className="self-start border-l border-gold/70 pl-5 text-[17px] leading-relaxed text-[#cfccc2] sm:pl-6 sm:text-lg lg:text-xl lg:leading-[1.6]">
                 We examine the evidence behind project condition rather than
                 relying on reported progress. True delivery confidence requires
                 looking past the dashboard to the underlying reality.
               </p>
             </div>
 
-            {/* Steps */}
-            <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-14 lg:grid-cols-5">
+            {/* Joined step cells: 1 col → 2 cols → 5 cols */}
+            <div className="mt-12 grid grid-cols-1 gap-px border border-[#4a463c] bg-[#4a463c] md:grid-cols-2 lg:mt-16 xl:grid-cols-5">
               {STEPS.map((s) => (
-                <div key={s.n} className="group cursor-pointer" tabIndex={0}>
+                <div
+                  key={s.n}
+                  className="bg-[#0d0f0e] transition-colors duration-300 hover:bg-[#141613] md:last:col-span-2 xl:last:col-span-1"
+                >
                   <StepCard number={s.n} title={s.title} description={s.desc} />
                 </div>
               ))}
@@ -115,81 +168,64 @@ export default function HowLmcsWorksPage() {
         </Container>
       </section>
 
-      {/* Assessment domains */}
-      <section className="border-b border-border bg-bg-alt py-20 md:py-24">
-        <Container>
+      {/* ───────────── Six Domains ───────────── */}
+      <section className="border-b border-border bg-bg-alt py-20 md:py-24 lg:py-32">
+        <Container wide>
           <Reveal>
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-serif text-3xl text-cream md:text-4xl">
-                The Assessment Domains
-              </h2>
+            <SectionLabel>Methodological Lens</SectionLabel>
 
-              <p className="mt-5 text-[15px] leading-relaxed text-muted">
-                Six areas provide a structured view of the conditions that
-                influence delivery confidence.
-              </p>
-            </div>
+            <h2 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.12] text-cream md:text-5xl">
+              The Six Domains: How We Examine Each One.
+            </h2>
 
-            <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3">
-              {DOMAINS.map((d) => (
-                <button
-                  key={d.title}
-                  type="button"
-                  className="
-                  group min-h-52.5 cursor-pointer
-                  rounded-sm border border-border
-                  bg-card p-6 text-left
-                  transition-all duration-300
-                  hover:-translate-y-1
-                  hover:border-gold
-                  hover:bg-[#20231f]
-                  focus-visible:outline-none
-                  focus-visible:ring-2
-                  focus-visible:ring-gold
-                  focus-visible:ring-offset-2
-                  focus-visible:ring-offset-bg-alt
-                  active:translate-y-0
-                  sm:p-7
-                "
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-serif text-xl text-gold transition-colors group-hover:text-gold-light">
+            <p className="mt-6 max-w-2xl text-[16px] leading-relaxed text-muted sm:text-[17px]">
+              Across every engagement, LMCS evaluates the same six canonical
+              domains. On this page, we examine the investigative questions and
+              empirical verification applied to each.
+            </p>
+
+            {/* 1 col → 2 cols → 3 cols, cells share 1px dividers */}
+            <div className="mt-12 grid grid-cols-1 gap-px border border-[#3b3d35] bg-[#3b3d35] sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+              {DOMAINS.map((d) => {
+                const DomainIcon = d.icon;
+
+                return (
+                  <article
+                    key={d.title}
+                    className="bg-[#282826] p-8 transition-colors duration-300 hover:bg-[#2e2e2b] sm:p-10 xl:p-12"
+                  >
+                    <DomainIcon
+                      className="h-6 w-6 text-gold"
+                      strokeWidth={1.6}
+                      aria-hidden
+                    />
+
+                    <h3 className="mt-8 font-serif text-[26px] leading-tight text-cream sm:text-[28px]">
                       {d.title}
                     </h3>
 
-                    <span
-                      aria-hidden="true"
-                      className="text-lg text-gold opacity-50 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
-                    >
-                      →
-                    </span>
-                  </div>
-
-                  <div className="mt-3 h-px w-8 bg-gold transition-all duration-300 group-hover:w-14" />
-
-                  <p className="mt-4 text-[14px] leading-relaxed text-muted sm:text-[15px]">
-                    {d.desc}
-                  </p>
-                </button>
-              ))}
+                    <p className="mt-4 text-[15px] leading-[1.65] text-muted">
+                      {d.desc}
+                    </p>
+                  </article>
+                );
+              })}
             </div>
           </Reveal>
         </Container>
       </section>
 
-      {/* Evidence */}
-      <section className="border-b border-border bg-bg py-20 md:py-24">
-        <Container>
+      {/* ───────────── Evidence + Lifecycle ───────────── */}
+      <section className="border-b border-border bg-bg py-20 md:py-24 lg:py-32">
+        <Container wide>
           <Reveal>
-            <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
+            <div className="grid grid-cols-1 gap-12 xl:grid-cols-2 xl:items-center xl:gap-16">
               <div>
-                <SectionLabel>Evidence Before Advancement</SectionLabel>
-
-                <h2 className="mt-3 font-serif text-3xl leading-tight text-cream md:text-4xl">
+                <h2 className="font-serif text-4xl leading-[1.15] text-cream sm:text-5xl lg:text-[64px]">
                   Evidence Before Advancement.
                 </h2>
 
-                <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted sm:text-[16px]">
+                <p className="mt-8 max-w-xl text-[17px] leading-relaxed text-muted sm:text-lg">
                   True readiness is not declared; it is proven. Advancement
                   through project phases must be supported by empirical
                   evidence, rigorous review, formal acceptance, clear ownership,
@@ -197,123 +233,119 @@ export default function HowLmcsWorksPage() {
                 </p>
               </div>
 
-              {/* Evidence flow */}
-              <div className="rounded-sm border border-border bg-card p-5 sm:p-7">
-                <div className="grid grid-cols-2 gap-5 sm:grid-cols-5 sm:gap-2">
-                  {EVIDENCE_STEPS.map((label, i) => (
-                    <button
-                      key={label}
-                      type="button"
-                      className="
-                      group flex cursor-pointer flex-col
-                      items-center gap-2 text-center
-                      focus-visible:outline-none
-                      focus-visible:ring-2
-                      focus-visible:ring-gold
-                      focus-visible:ring-offset-2
-                      focus-visible:ring-offset-card
-                      rounded-sm p-2
-                    "
-                    >
-                      <span
-                        className={`
-                        h-3 w-3 rounded-full transition-all duration-300
-                        ${
-                          i === EVIDENCE_STEPS.length - 1
-                            ? "bg-gold shadow-[0_0_0_4px_rgba(201,164,91,0.12)]"
-                            : "border border-gold group-hover:bg-gold"
-                        }
-                      `}
-                      />
+              {/* Progression principles */}
+              <div className="border border-border bg-[#151714] p-6 sm:p-8">
+                <div className="flex items-center justify-between gap-4 border-b border-border pb-4">
+                  <SectionLabel>Progression Principles</SectionLabel>
 
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-muted transition-colors group-hover:text-gold sm:text-[11px]">
-                        {label}
-                      </span>
-                    </button>
-                  ))}
+                  <p className="text-right text-[10px] uppercase tracking-[0.12em] text-muted">
+                    Phase Gate Criteria
+                  </p>
                 </div>
+
+                <ol className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:items-center sm:gap-0">
+                  {EVIDENCE_STEPS.map((label, i) => {
+                    const isFirst = i === 0;
+                    const isLast = i === EVIDENCE_STEPS.length - 1;
+
+                    return (
+                      <li
+                        key={label}
+                        className="flex items-center sm:flex-1 sm:last:flex-none"
+                      >
+                        <div className="flex w-full flex-col items-center gap-2 bg-[#1a1c1a] px-3 py-2 text-center sm:w-auto">
+                          <span
+                            aria-hidden
+                            className={`h-2 w-2 ${
+                              isFirst
+                                ? "bg-gold"
+                                : isLast
+                                  ? "bg-cream"
+                                  : "border border-cream"
+                            }`}
+                          />
+
+                          <span
+                            className={`text-[10px] uppercase tracking-[0.1em] ${
+                              isLast ? "text-cream" : "text-muted"
+                            }`}
+                          >
+                            {label}
+                          </span>
+                        </div>
+
+                        {!isLast && (
+                          <span
+                            aria-hidden
+                            className="hidden h-px min-w-2 flex-1 bg-[#3b3d35] sm:block"
+                          />
+                        )}
+                      </li>
+                    );
+                  })}
+                </ol>
               </div>
             </div>
 
-            {/* Lifecycle */}
-            <div className="mt-12 rounded-sm border border-border bg-card p-6 sm:mt-14 sm:p-10">
-              <SectionLabel>The Assessment Lifecycle</SectionLabel>
+            {/* Assessment lifecycle */}
+            <div className="mt-16 border border-border bg-bg-alt p-6 sm:p-10 lg:mt-24 lg:p-14">
+              <div className="flex flex-col gap-5 border-b border-border pb-6 md:flex-row md:items-start md:justify-between">
+                <div>
+                  <SectionLabel>The Assessment Lifecycle</SectionLabel>
 
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-                {LIFECYCLE.map((step, i) => (
-                  <div key={step} className="flex items-center gap-2 sm:gap-3">
-                    <button
-                      type="button"
-                      className="
-                      cursor-pointer rounded-sm
-                      border border-border
-                      bg-bg-alt px-3 py-2
-                      text-xs text-cream
-                      transition-all duration-200
-                      hover:border-gold
-                      hover:bg-[#20231f]
-                      hover:text-gold
-                      focus-visible:outline-none
-                      focus-visible:ring-2
-                      focus-visible:ring-gold
-                    "
+                  <p className="mt-2 text-[14px] leading-relaxed text-muted">
+                    Structured framework from baseline observation to executive
+                    certainty
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="text-[10px] uppercase tracking-[0.12em] text-muted">
+                    Terminal Synthesis:
+                  </span>
+
+                  <span className="inline-flex items-center gap-2 border border-cream/70 px-4 py-2.5 text-[12px] uppercase tracking-[0.06em] text-gold">
+                    <span aria-hidden className="h-1.5 w-1.5 bg-gold" />
+                    Delivery Confidence
+                  </span>
+                </div>
+              </div>
+
+              <ol className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+                {LIFECYCLE.map((s, i) => {
+                  const StepIcon = s.icon;
+                  const isLast = i === LIFECYCLE.length - 1;
+
+                  return (
+                    <li
+                      key={s.n}
+                      className="border border-[#3d3d35] bg-bg p-5 transition-colors duration-300 hover:border-gold/70"
                     >
-                      {step}
-                    </button>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[11px] tracking-[0.12em] text-gold">
+                          {s.n}
+                        </span>
 
-                    {i < LIFECYCLE.length - 1 && (
-                      <span aria-hidden="true" className="text-gold">
-                        →
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
+                        <StepIcon
+                          className={`h-4 w-4 ${
+                            isLast ? "text-gold" : "text-muted"
+                          }`}
+                          strokeWidth={1.6}
+                          aria-hidden
+                        />
+                      </div>
 
-              <div className="mt-5 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-                <button
-                  type="button"
-                  className="
-                  cursor-pointer rounded-sm
-                  border border-border
-                  bg-bg-alt px-4 py-2
-                  text-xs text-cream
-                  transition-all duration-200
-                  hover:border-gold
-                  hover:bg-[#20231f]
-                  hover:text-gold
-                  focus-visible:outline-none
-                  focus-visible:ring-2
-                  focus-visible:ring-gold
-                "
-                >
-                  Decision
-                </button>
+                      <h3 className="mt-6 font-serif text-[22px] leading-tight text-cream">
+                        {s.title}
+                      </h3>
 
-                <span aria-hidden="true" className="text-gold">
-                  →
-                </span>
-
-                <button
-                  type="button"
-                  className="
-                  cursor-pointer rounded-sm
-                  border border-gold
-                  bg-bg-alt px-4 py-2
-                  text-xs font-semibold text-gold
-                  transition-all duration-200
-                  hover:bg-gold
-                  hover:text-[#171613]
-                  focus-visible:outline-none
-                  focus-visible:ring-2
-                  focus-visible:ring-gold
-                  focus-visible:ring-offset-2
-                  focus-visible:ring-offset-card
-                "
-                >
-                  Delivery Confidence
-                </button>
-              </div>
+                      <p className="mt-2 text-[13px] leading-relaxed text-muted">
+                        {s.desc}
+                      </p>
+                    </li>
+                  );
+                })}
+              </ol>
             </div>
           </Reveal>
         </Container>

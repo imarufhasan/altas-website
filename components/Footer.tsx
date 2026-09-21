@@ -33,7 +33,10 @@ function FooterColumn({
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-bg">
-      <Container className="grid grid-cols-1 gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <Container
+        wide
+        className="grid grid-cols-1 gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]"
+      >
         <div>
           <Link href="/" className="font-serif text-2xl text-gold">
             LMCS
@@ -52,20 +55,25 @@ export default function Footer() {
         <FooterColumn title="Legal" items={FOOTER_LEGAL} />
       </Container>
 
-      <Container className="flex flex-col items-start justify-between gap-4 border-t border-border py-6 text-[13px] text-muted md:flex-row md:items-center">
-        <p>
-          © {new Date().getFullYear()} Leadership Mission Critical Solutions.
-          All rights reserved.
-        </p>
-        <div className="flex gap-6">
-          <Link href="/legal/privacy-notice" className="hover:text-gold">
-            Privacy Notice
-          </Link>
-          <Link href="/legal/terms-of-use" className="hover:text-gold">
-            Terms of Use
-          </Link>
-        </div>
-      </Container>
+      <div className="border-t border-border">
+        <Container
+          wide
+          className="flex flex-col items-start justify-between gap-4 py-6 text-[13px] text-muted md:flex-row md:items-center"
+        >
+          <p>
+            © {new Date().getFullYear()} Leadership Mission Critical Solutions.
+            All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <Link href="/legal/privacy-notice" className="hover:text-gold">
+              Privacy Notice
+            </Link>
+            <Link href="/legal/terms-of-use" className="hover:text-gold">
+              Terms of Use
+            </Link>
+          </div>
+        </Container>
+      </div>
     </footer>
   );
 }
