@@ -55,7 +55,7 @@ export default function RelationalDiagram({ nodes }: { nodes: DiagramNode[] }) {
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="atlas-diagram-ring absolute inset-0 rounded-full border border-gold/60" />
         <div
-          className="atlas-diagram-hex relative flex h-16 w-16 items-center justify-center border border-gold bg-bg-alt text-[11px] font-semibold tracking-widest text-gold md:h-18 md:w-18"
+          className="atlas-diagram-hex relative flex h-14 w-14 items-center justify-center border border-gold bg-bg-alt text-[10px] font-semibold tracking-widest text-gold sm:h-16 sm:w-16 md:h-18 md:w-18 md:text-[11px]"
           style={{
             clipPath:
               "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)",
@@ -69,10 +69,12 @@ export default function RelationalDiagram({ nodes }: { nodes: DiagramNode[] }) {
       {nodes.map((node) => (
         <div
           key={node.label}
-          className="absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-sm border border-border bg-bg-alt px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted shadow-[0_0_0_1px_rgba(0,0,0,0)] transition-colors hover:border-gold/60 hover:text-gold"
+          className="absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-sm border border-border bg-bg-alt px-2 py-1 text-[8px] font-semibold uppercase tracking-[0.08em] text-muted transition-colors hover:border-gold/60 hover:text-gold sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.12em]"
           style={{ top: `${node.top}%`, left: `${node.left}%` }}
         >
-          {node.dot && <span className="mr-1.5 inline-block h-1 w-1 rounded-full bg-gold align-middle" />}
+          {node.dot && (
+            <span className="mr-1.5 inline-block h-1 w-1 rounded-full bg-gold align-middle" />
+          )}
           {node.label}
         </div>
       ))}
