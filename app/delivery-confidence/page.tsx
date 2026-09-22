@@ -81,44 +81,47 @@ export default function DeliveryConfidencePage() {
       />
 
       <section className="border-b border-border bg-bg py-20 sm:py-24 lg:py-28">
-        <Container
-          wide
-          className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-16"
-        >
+        <Container wide>
           <Reveal>
-            <h2
-              className="
-              max-w-xl
-              font-serif
-              text-3xl
-              leading-tight
-              text-gold
-              transition-transform
-              duration-500
-              hover:translate-x-1
-              md:text-4xl
-            "
-            >
-              Confidence Is Not Optimism.
-            </h2>
+            <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
+              <h2
+                className="
+            w-full
+            font-serif
+            text-3xl
+            leading-tight
+            text-gold
+            transition-transform
+            duration-500
+            hover:translate-y-[-2px]
+            md:text-4xl
+            lg:text-[42px]
+          "
+              >
+                Confidence Is Not Optimism.
+              </h2>
 
-            <p
-              className="
-              max-w-3xl
-              text-[16px]
-              leading-[1.8]
-              text-muted
-              transition-colors
-              duration-300
-              hover:text-cream/80
-            "
-            >
-              Delivery confidence should be informed by evidence and the
-              condition of the project rather than optimism, assumptions, or
-              reported progress alone. True executive assurance requires a
-              rigorous examination of the underlying mechanics driving the
-              initiative forward.
-            </p>
+              <p
+                className="
+            mt-6
+            w-full
+            max-w-3xl
+            text-[16px]
+            leading-[1.8]
+            text-muted
+            transition-colors
+            duration-300
+            hover:text-cream/80
+            sm:text-[17px]
+          "
+              >
+                Delivery confidence should be informed by evidence and the
+                condition of the project rather than optimism, assumptions, or
+                reported progress alone. True executive assurance requires a
+                rigorous examination of the underlying mechanics driving the
+                initiative forward.
+              </p>
+            </div>
           </Reveal>
         </Container>
       </section>
