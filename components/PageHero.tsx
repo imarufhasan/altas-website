@@ -98,11 +98,11 @@ export default function PageHero({
             <Button href={buttonHref}>
               {buttonArrow ? (
                 <span className="inline-flex items-center gap-2">
-                  {buttonLabel}
+                  {buttonLabel.toUpperCase()}
                   <ArrowRight />
                 </span>
               ) : (
-                buttonLabel
+                buttonLabel.toUpperCase()
               )}
             </Button>
           </div>

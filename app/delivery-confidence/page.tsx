@@ -81,7 +81,7 @@ export default function DeliveryConfidencePage() {
       />
 
       <section className="border-b border-border bg-bg py-20 sm:py-24 lg:py-28">
-        <Container className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+        <Container wide className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
           <Reveal>
             <h2
               className="
@@ -121,7 +121,7 @@ export default function DeliveryConfidencePage() {
       </section>
 
       <section className="border-b border-border bg-bg-alt py-20 sm:py-24 lg:py-28">
-        <Container>
+        <Container wide>
           <SectionLabel>The Framework</SectionLabel>
           <Reveal>
             <h2
@@ -301,7 +301,7 @@ export default function DeliveryConfidencePage() {
       </section>
 
       <section className="border-b border-border bg-bg py-20 sm:py-24 lg:py-28">
-        <Container>
+        <Container wide>
           <Reveal>
             <h2
               className="
@@ -445,7 +445,7 @@ export default function DeliveryConfidencePage() {
       </section>
 
       <section className="border-b border-border bg-bg-alt py-20 sm:py-24 lg:py-28">
-        <Container className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
+        <Container wide className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <h2
               className="

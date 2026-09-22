@@ -77,20 +77,19 @@ export default async function HomePage() {
             </div>
 
             <h1 className="mt-5 max-w-3xl font-serif text-5xl leading-[1.1] text-cream md:text-6xl lg:text-[64px]">
-              Mission-critical leadership and project intelligence built
-              around readiness.
+              Mission-critical leadership and project intelligence built around
+              readiness.
             </h1>
 
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted sm:text-lg">
-              LMCS helps organizations identify Project Drift, strengthen
-              governance, improve accountability, and build confidence before
-              advancing mission-critical projects.
+              LMCS defines the leadership and delivery system. Atlas
+              operationalizes it as continuous project intelligence—connecting
+              decisions, evidence, MEP execution, readiness, risk, and turnover
+              from executive planning through Operations.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-              <Button href="/atlas">
-                EXPLORE ATLAS
-              </Button>
+              <Button href="/atlas">EXPLORE ATLAS</Button>
 
               <Button href="/contact" variant="ghost">
                 SCHEDULE EXECUTIVE DISCOVERY

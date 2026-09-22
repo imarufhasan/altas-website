@@ -22,6 +22,7 @@ export const FOOTER_SERVICES: NavItem[] = [
   { label: "Project Assessment", href: "/project-assessment" },
   { label: "Project Drift", href: "/project-drift" },
   { label: "Delivery Confidence", href: "/delivery-confidence" },
+  { label: "Atlas", href: "/atlas" },
 ];
 
 export const FOOTER_COMPANY: NavItem[] = [
