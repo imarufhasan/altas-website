@@ -7,7 +7,6 @@ import { useState } from "react";
 import Container from "./Container";
 import Button from "./Button";
 import { CONTACT_HREF, NAV_ITEMS } from "@/lib/nav";
-import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -16,16 +15,13 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur">
       <Container wide className="flex items-center justify-between py-5">
-        {/* Logo */}
-        <Link href="/" className="shrink-0">
-          <Image
-            src="/images/lmcs_icon.png"
-            alt="ATLAS"
-            width={88}
-            height={88}
-            className="h-12 w-28 object-contain"
-            priority
-          />
+        {/* LMCS Text Brand */}
+        <Link
+          href="/"
+          className="shrink-0 font-serif text-2xl font-semibold tracking-[0.08em] text-cream transition-colors hover:text-gold"
+          aria-label="LMCS Home"
+        >
+          LMCS
         </Link>
 
         {/* Desktop Navigation */}
