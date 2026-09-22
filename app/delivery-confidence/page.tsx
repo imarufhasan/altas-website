@@ -81,7 +81,10 @@ export default function DeliveryConfidencePage() {
       />
 
       <section className="border-b border-border bg-bg py-20 sm:py-24 lg:py-28">
-        <Container wide className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+        <Container
+          wide
+          className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-16"
+        >
           <Reveal>
             <h2
               className="
@@ -445,94 +448,94 @@ export default function DeliveryConfidencePage() {
       </section>
 
       <section className="border-b border-border bg-bg-alt py-20 sm:py-24 lg:py-28">
-        <Container wide className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
+        <Container wide>
           <Reveal>
-            <h2
-              className="
-              max-w-sm
-              font-serif
-              text-3xl
-              leading-tight
-              text-cream
-              md:text-4xl
-            "
-            >
-              A Clearer Basis for Executive Decisions
-            </h2>
+            <div className="mx-auto w-full max-w-4xl text-center">
+              <h2
+                className="
+            font-serif
+            text-3xl
+            leading-tight
+            text-cream
+            md:text-4xl
+            lg:text-[42px]
+          "
+              >
+                A Clearer Basis for Executive Decisions
+              </h2>
 
-            <ul className="space-y-5">
-              {CHECKLIST.map((item) => (
-                <li
-                  key={item.title}
-                  className="
-                  group
+              <ul className="mx-auto mt-10 w-full max-w-3xl space-y-5 text-left">
+                {CHECKLIST.map((item) => (
+                  <li
+                    key={item.title}
+                    className="
+                group
+                flex
+                gap-4
+                rounded-sm
+                border
+                border-transparent
+                p-3
+                transition-all
+                duration-300
+                hover:border-border
+                hover:bg-card/40
+              "
+                  >
+                    <span
+                      className="
+                  mt-1
                   flex
-                  gap-4
-                  rounded-sm
+                  h-6
+                  w-6
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
                   border
-                  border-transparent
-                  p-3
-                  -mx-3
+                  border-gold
+                  text-[11px]
+                  text-gold
                   transition-all
                   duration-300
-                  hover:border-border
-                  hover:bg-card/40
+                  group-hover:bg-gold
+                  group-hover:text-bg
                 "
-                >
-                  {/* Check icon */}
-                  <span
-                    className="
-                    mt-1
-                    flex
-                    h-6
-                    w-6
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-gold
-                    text-[11px]
+                    >
+                      ✓
+                    </span>
+
+                    <div className="min-w-0 flex-1">
+                      <p
+                        className="
+                    text-[13px]
+                    font-semibold
+                    uppercase
+                    tracking-widest
                     text-gold
-                    transition-all
+                    transition-transform
                     duration-300
-                    group-hover:bg-gold
-                    group-hover:text-bg
+                    group-hover:translate-x-0.5
                   "
-                  >
-                    ✓
-                  </span>
+                      >
+                        {item.title}
+                      </p>
 
-                  <div>
-                    <p
-                      className="
-                      text-[13px]
-                      font-semibold
-                      uppercase
-                      tracking-widest
-                      text-gold
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-0.5
-                    "
-                    >
-                      {item.title}
-                    </p>
-
-                    <p
-                      className="
-                      mt-1.5
-                      text-[14px]
-                      leading-relaxed
-                      text-muted
-                    "
-                    >
-                      {item.desc}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                      <p
+                        className="
+                    mt-1.5
+                    text-[14px]
+                    leading-relaxed
+                    text-muted
+                  "
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Reveal>
         </Container>
       </section>

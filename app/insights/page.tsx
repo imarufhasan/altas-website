@@ -20,7 +20,7 @@ export default function InsightsPage() {
       />
 
       <section className="border-b border-border bg-bg py-24">
-        <Container>
+        <Container wide>
           <Reveal>
             <div className="flex items-end justify-between">
               <h2 className="font-serif text-3xl text-cream md:text-4xl">
