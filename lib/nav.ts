@@ -11,6 +11,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Project Assessment", href: "/project-assessment" },
   { label: "ATLAS", href: "/atlas" },
   { label: "Project Drift", href: "/project-drift" },
+  { label: "Academy", href: "/academy" },
   { label: "Delivery Confidence", href: "/delivery-confidence" },
   { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },

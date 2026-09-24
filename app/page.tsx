@@ -109,7 +109,7 @@ export default async function HomePage() {
 
               <ul className="mt-6 space-y-5">
                 {framework.map((f) => (
-                  <li key={f.title} className="flex items-start gap-3.5">
+                  <li key={f.title} className="flex items-start py-1 gap-3.5">
                     <Icon
                       name={f.icon}
                       className="mt-0.5 h-4.5 w-4.5 shrink-0 text-gold"
@@ -262,7 +262,7 @@ export default async function HomePage() {
 
           <Reveal>
             <div className="mt-14 flex flex-col gap-6 border-t border-border pt-10 md:flex-row md:items-center md:justify-between">
-              <Button href="/academy" square>
+              <Button href="/" square>
                 EXPLORE LMCS ACADEMY
               </Button>
 
@@ -315,7 +315,7 @@ export default async function HomePage() {
           title="What Condition Needs to Change?"
           description="Whether the issue is readiness, Project Drift, decision latency, MEP execution, commissioning preparation, or transition to Operations, LMCS starts with the condition—not a predetermined consulting package."
           buttonLabel="DISCUSS AN ASSESSMENT"
-          buttonHref="/contact"
+          buttonHref="/project-assessment"
           secondaryLabel="EXPLORE ATLAS"
           secondaryHref="/atlas"
         />

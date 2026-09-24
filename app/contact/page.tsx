@@ -12,21 +12,26 @@ const INQUIRIES = [
   },
   {
     n: "02",
+    title: "Atlas Platform",
+    desc: "Demonstrations, deployment architecture, and site intelligence integration for mission-critical facilities.",
+  },
+  {
+    n: "03",
     title: "Executive / Portfolio",
     desc: "Strategic discussions concerning portfolio-level governance and executive alignment.",
   },
   {
-    n: "03",
+    n: "04",
     title: "Practitioner",
     desc: "Engagement queries regarding methodology implementation and practitioner support.",
   },
   {
-    n: "04",
+    n: "05",
     title: "Partnership",
     desc: "Explore collaboration and partnership opportunities with LMCS.",
   },
   {
-    n: "05",
+    n: "06",
     title: "General Inquiry",
     desc: "For all other questions, media inquiries, or general communications.",
   },
