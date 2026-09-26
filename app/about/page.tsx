@@ -12,44 +12,17 @@ import Reveal from "@/components/Reveal";
  * chip (#E8C177 / #513A00) for the audit score.
  */
 
-const PRINCIPALS = [
-  {
-    label: "Managing Principal",
-    credentials: "PE, ATS",
-    name: "Marcus Vance",
-    title: "Mission Critical Commissioning & Critical Path Systems",
-    bio: "22 years directing high-hazard MEP commissioning and utility interconnection. Led critical path delivery across $4.2B in Tier III/IV data center deployments and semiconductor cleanroom expansions.",
-    stats: [
-      { label: "Hyperscale Scope", value: "480MW / 6 Campuses" },
-      {
-        label: "Integrated Systems Testing",
-        value: "Zero Post-Handover Outages",
-      },
-    ],
-  },
-  {
-    label: "Partner & Technical Director",
-    credentials: "IEEE, NFPA 70E",
-    name: "Dr. Eleanor Ward",
-    title: "High-Voltage Substations & Redundancy Governance",
-    bio: "Former Mission-Critical Infrastructure Director overseeing 12 energized utility-scale substations (230kV/34.5kV) and 72-hour continuous IST burn-ins under zero-fault mandates.",
-    stats: [
-      { label: "Energized Grid Capacity", value: "1.2GW High-Voltage Assets" },
-      { label: "Regulatory Clearance", value: "100% On-Schedule Energization" },
-    ],
-  },
-  {
-    label: "Partner, Forensic Advisory",
-    credentials: "PMP, RCDD",
-    name: "Julian Thorne",
-    title: "Capital Program Recovery & Dispute Mitigation",
-    bio: "Specialist in distress intervention for stalled mega-projects. Recovered schedule drift across 14 multi-prime contract architectures, mitigating $140M+ in contractor delay claim exposure.",
-    stats: [
-      { label: "Program Recovery Value", value: "$3.1B Recovered CapEx" },
-      { label: "Arbitration Reduction", value: "94% Pre-Dispute Resolution" },
-    ],
-  },
-];
+const PRINCIPAL = {
+  label: "Founder & Chief Architect",
+  name: "Chandler Johnson",
+  title: "Leadership Mission Critical Solutions",
+  bio: [
+    "Chandler Johnson brings 15 years of industry experience spanning project management, multi-city project coordination, commissioning planning, and operational readiness. His work connects schedules, equipment, resources, and people to help teams deliver complex mission-critical projects.",
+    "His experience includes managing projects across multiple cities, building teams, and developing people through training and practical guidance. He emphasizes clear responsibilities, consistent communication, and coordination across locations so teams understand both their work and how it affects the broader project.",
+    "Chandler founded Leadership Mission Critical Solutions to help organizations identify gaps earlier, strengthen leadership, and improve delivery practices. He also guides the vision and requirements for Atlas, bringing field experience into tools that help teams organize information, track commitments, and understand what needs to happen next.",
+  ],
+  principle: "Leadership is Infrastructure.",
+};
 
 const CREDENTIALS = [
   { name: "IEEE", sub: "Standards Assn" },
@@ -132,7 +105,10 @@ export default function AboutPage() {
 
       {/* WHY LMCS EXISTS */}
       <section className="border-b border-border bg-bg py-24">
-        <Container wide className="grid grid-cols-1 gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+        <Container
+          wide
+          className="grid grid-cols-1 gap-10 lg:grid-cols-[0.7fr_1.3fr]"
+        >
           <Reveal>
             <h2 className="font-serif text-3xl text-gold">Why LMCS Exists</h2>
             <div className="space-y-5 text-[16px] leading-relaxed text-muted">
@@ -153,63 +129,36 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* OPERATIONAL SCALE & PROVEN AUTHORITY */}
+      {/* FOUNDER */}
       <section className="border-b border-border bg-bg py-24">
         <Container wide>
           <Reveal>
-            <SectionLabel>
-              Operational Scale &amp; Proven Authority
-            </SectionLabel>
+            <SectionLabel>Leadership</SectionLabel>
             <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-tight text-cream md:text-4xl">
-              Principals Who Have Held the Line.
+              The Architect Behind LMCS.
             </h2>
-            <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-muted">
-              LMCS is led exclusively by commissioning authorities and project
-              directorship veterans who have carried personal balance-sheet and
-              operational accountability for Tier III/IV hyperscale and
-              high-voltage programs.
-            </p>
 
-            <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-              {PRINCIPALS.map((p) => (
-                <div
-                  key={p.name}
-                  className="flex flex-col rounded-sm border border-border bg-card p-7"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-gold">
-                      {p.label}
-                    </span>
-                    <span className="whitespace-nowrap text-[13px] text-muted">
-                      {p.credentials}
-                    </span>
-                  </div>
+            <div className="mx-auto mt-14 max-w-2xl rounded-sm border border-border bg-card p-8 md:p-10">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-gold">
+                {PRINCIPAL.label}
+              </span>
 
-                  <h3 className="mt-4 font-serif text-2xl text-cream">
-                    {p.name}
-                  </h3>
-                  <p className="mt-2 text-[14px] font-medium leading-snug text-gold">
-                    {p.title}
-                  </p>
-                  <p className="mt-4 text-[14.5px] leading-relaxed text-muted">
-                    {p.bio}
-                  </p>
+              <h3 className="mt-4 font-serif text-2xl text-cream md:text-3xl">
+                {PRINCIPAL.name}
+              </h3>
+              <p className="mt-2 text-[14px] font-medium leading-snug text-gold">
+                {PRINCIPAL.title}
+              </p>
 
-                  <div className="mt-auto space-y-3 border-t border-border pt-5 text-[13.5px]">
-                    {p.stats.map((s) => (
-                      <div
-                        key={s.label}
-                        className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"
-                      >
-                        <span className="text-muted">{s.label}</span>
-                        <span className="font-semibold text-cream">
-                          {s.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+              <div className="mt-5 space-y-4 text-[14.5px] leading-relaxed text-muted">
+                {PRINCIPAL.bio.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+
+              <p className="mt-6 border-t border-border pt-5 font-serif text-lg text-cream">
+                {PRINCIPAL.principle}
+              </p>
             </div>
           </Reveal>
         </Container>
@@ -241,7 +190,10 @@ export default function AboutPage() {
 
       {/* DE-IDENTIFIED ENGAGEMENT RECORD */}
       <section className="border-b border-border bg-bg py-24">
-        <Container wide className="grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <Container
+          wide
+          className="grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_1.15fr]"
+        >
           <Reveal>
             <div>
               <SectionLabel>De-identified Engagement Record</SectionLabel>
@@ -339,7 +291,10 @@ export default function AboutPage() {
 
       {/* THE LMCS PERSPECTIVE */}
       <section className="border-b border-border bg-bg py-24">
-        <Container wide className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <Container
+          wide
+          className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]"
+        >
           <Reveal>
             <div>
               <h2 className="font-serif text-3xl text-cream md:text-4xl">
